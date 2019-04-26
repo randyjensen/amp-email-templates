@@ -1,5 +1,5 @@
 # AMP-Templates.com
-Free AMP Email Templates (Creative Commons Attribution 4.0)
+Free AMP Email Templates ([Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/))
 
 *All templates are licensed under the Creative Commons Attribution 4.0 License, which means you can:*
 
