@@ -1,0 +1,393 @@
+<!doctype html>
+<html ⚡4email>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    /* General */
+    body {
+      font-family: sans-serif;
+      background: white;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      text-align: center;
+    }
+    h4 {
+      color: #999;
+      font-style: italic;
+    }
+    a {
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    small {
+      display: block;
+      line-height: 18px;
+      margin-bottom: 20px;
+    }
+    hr.small {
+      border: 2px solid black;
+      outline: none;
+      background: black;
+      height: 2px;
+      width: 50px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      background: white;
+      padding: 60px 0 50px;
+    }
+    .nav {
+      text-align: center;
+      font-size: 18px;
+      margin: 0;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+    .nav button {
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: black;
+      cursor: pointer;
+      background: none;
+    }
+    .nav button:hover {
+      background: #fafafa;
+    }
+
+    /* Carousel */
+    amp-img img {
+      object-fit: cover;
+    }
+    .contain img {
+      background-size: cover;
+    }
+    .carousel-link {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    .caption {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      color: white;
+      font-size: 15px;
+    }
+    .caption p:not(:empty) {
+      padding: 5px 10px;
+    }
+
+    /* Friend form */
+    .invite-a-friend {
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      margin: 20px 0;
+    }
+    .invite-a-friend h1 {
+      font-size: 26px;
+      margin: 20px 0 5px 0;
+    }
+    .invite-a-friend h2 {
+      font-size: 20px;
+      margin: 0 0 20px;
+      font-weight: normal;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="email"] {
+      padding: 5px;
+      font-size: 16px;
+      height: 20px;
+      margin: 0;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      border: 1px solid #999;
+      border-right: none;
+      float: left;
+    }
+    input[type="submit"] {
+      background: black;
+      color: white;
+      border: none;
+      height: 32px;
+      width: 100px;
+      font: normal 16px sans-serif;
+      text-shadow: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    .submit-message {
+      padding: 10px 10px 14px 10px;
+      margin: 20px 0 0;
+      border-radius: 3px;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+      font-size: 14px;
+    }
+    .submit-success {
+      background: #E8F5E9;
+      border-top: 3px solid #00C853;
+    }
+    .submit-error {
+      background: #FFEBEE;
+      border-top: 3px solid #D50000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 0 20px 20px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 4px;
+    }
+    .left {
+      text-align: left;
+    }
+    .fade {
+      color: #999;
+    }
+    .copyright {
+      font-size: 12px;
+    }
+    .copyright a {
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <amp-state id="selected">
+      <script type="application/json">
+        {
+          "hideDefault": false,
+          "hideMens": true,
+          "hideWomens": true,
+          "hideKids": true
+        }
+      </script>
+    </amp-state>
+
+    <div class="header">
+      <amp-img src="https://amp-templates.com/templates/images/logos/company-din-black.png"
+        width="400"
+        height="71"
+        alt="Company Logo"
+        layout="fixed"></amp-img>
+    </div>
+
+    <div class="nav">
+      <button on="tap:AMP.setState({selected: {hideDefault: true, hideMens: false, hideWomens: true, hideKids: true}})">Mens</button>
+      <button on="tap:AMP.setState({selected: {hideDefault: true, hideMens: true, hideWomens: false, hideKids: true}})">Womens</button>
+      <button on="tap:AMP.setState({selected: {hideDefault: true, hideMens: true, hideWomens: true, hideKids: false}})">Kids</button>
+    </div>
+
+    <h1>Spring Essentials!</h1>
+
+    <amp-list src="https://amp-templates.com/templates/api/1.json"
+      layout="fixed-height"
+      height="400"
+      [hidden]="selected.hideDefault">
+      <template type="amp-mustache">
+        <amp-carousel id="links-carousel"
+          height="400"
+          layout="fixed-height"
+          [hidden]="selected.hideDefault"
+          type="slides">
+            {{#default}}
+              {{#images}}
+                <div>
+                  <a href="{{link}}" class="carousel-link">
+                    <amp-img
+                      class="contain"
+                      layout="fill"
+                      src="{{image}}"
+                      alt="photo courtesy of Unsplash"></amp-img>
+                      <div class="caption">
+                        <p>{{description}}</p>
+                      </div>
+                  </a>
+                </div>
+              {{/images}}
+            {{/default}}
+        </amp-carousel>
+      </template>
+    </amp-list>
+
+    <amp-list src="https://amp-templates.com/templates/api/2.json"
+      layout="fixed-height"
+      height="400"
+      hidden
+      [hidden]="selected.hideMens">
+      <template type="amp-mustache">
+        <amp-carousel id="links-carousel"
+          height="400"
+          layout="fixed-height"
+          [hidden]="selected.hideMens"
+          type="slides">
+            {{#mens}}
+              {{#images}}
+                <a href="{{link}}" class="carousel-link">
+                  <amp-img
+                    class="contain"
+                    layout="fill"
+                    src="{{image}}"
+                    alt="photo courtesy of Unsplash"></amp-img>
+                    <div class="caption">
+                      <p>{{description}}</p>
+                    </div>
+                </a>
+              {{/images}}
+            {{/mens}}
+        </amp-carousel>
+      </template>
+    </amp-list>
+
+    <amp-list src="https://amp-templates.com/templates/api/2.json"
+      layout="fixed-height"
+      height="400"
+      hidden
+      [hidden]="selected.hideWomens">
+      <template type="amp-mustache">
+        <amp-carousel id="links-carousel"
+          height="400"
+          layout="fixed-height"
+          [hidden]="selected.hideWomens"
+          type="slides">
+            {{#womens}}
+              {{#images}}
+                <a href="{{link}}" class="carousel-link">
+                  <amp-img
+                    class="contain"
+                    layout="fill"
+                    src="{{image}}"
+                    alt="photo courtesy of Unsplash"></amp-img>
+                    <div class="caption">
+                      <p>{{description}}</p>
+                    </div>
+                </a>
+              {{/images}}
+            {{/womens}}
+        </amp-carousel>
+      </template>
+    </amp-list>
+
+    <amp-list src="https://amp-templates.com/templates/api/2.json"
+      layout="fixed-height"
+      height="400"
+      hidden
+      [hidden]="selected.hideKids">
+      <template type="amp-mustache">
+        <amp-carousel id="links-carousel"
+          height="400"
+          layout="fixed-height"
+          [hidden]="selected.hideKids"
+          type="slides">
+            {{#kids}}
+              {{#images}}
+                <a href="{{link}}" class="carousel-link">
+                  <amp-img
+                    class="contain"
+                    layout="fill"
+                    src="{{image}}"
+                    alt="photo courtesy of Unsplash"></amp-img>
+                    <div class="caption">
+                      <p>{{description}}</p>
+                    </div>
+                </a>
+              {{/images}}
+            {{/kids}}
+        </amp-carousel>
+      </template>
+    </amp-list>
+
+    <div class="invite-a-friend">
+      <h1>Share the love!</h1>
+      <h2>Refer a friend and get $10 off your next order</h2>
+      <form method="post"
+        action-xhr="https://example.com/subscribe/api">
+        <fieldset>
+          <input type="email"
+            name="email"
+            placeholder="Friend's Email"
+            required><input type="submit" value="Send!">
+        </fieldset>
+        <div submit-success class="submit-success submit-message">
+          <template type="amp-mustache">
+            Success! Find your $10 off coupon in your email.
+          </template>
+        </div>
+        <div submit-error class="submit-error submit-message">
+          <template type="amp-mustache">
+            Something went wrong :( Try once more?
+          </template>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <h3>Visit Us</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com">
+          <amp-img height="24" width="24" src="https://amp-templates.com/templates/images/social/facebook.png" />
+        </a>
+        <a href="https://twitter.com">
+          <amp-img height="24" width="24" src="https://amp-templates.com/templates/images/social/twitter.png" />
+        </a>
+        <a href="https://instagram.com">
+          <amp-img height="24" width="24" src="https://amp-templates.com/templates/images/social/instagram.png" />
+        </a>
+      </div>
+      <hr class="small" />
+      <small>
+        Customer service 1-800-555-5555<br />
+        555 Alpha Rd, Beta City, MT 55555
+      </small>
+      <hr class="small" />
+      <small>
+        <a href="https://you.com/ubsubscribe">Unsubscribe</a> | <a href="https://you.com/update">Update My Preferences</a>
+      </small>
+      <small class="left fade">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lacus quis velit viverra iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum maximus ipsum ex. Curabitur elementum luctus augue, quis eleifend tortor feugiat vel. Maecenas maximus, ipsum et laoreet congue, diam massa aliquam libero, at pellentesque orci ipsum et velit. Quisque condimentum fermentum tellus at elementum.
+      </small>
+      <div class="copyright left fade">Designed by <a href="https://amp-templates.com/site/">AMP-Templates.com</a>. Demo Images: <a href="https://unsplash.com">Unsplash</a>.</div>
+    </footer>
+  </div>
+</body>
+</html>

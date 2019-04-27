@@ -1,0 +1,89 @@
+{
+  "items": [
+    {
+      "default": [
+        {
+          "images": [
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Default: This is the caption 1",
+              "link": "https://google.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400",
+              "description": "Default: This is the caption 2",
+              "link": "https://microsoft.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "link": "https://yahoo.com"
+            }
+          ]
+        }
+      ],
+      "mens": [
+        {
+          "images": [
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Mens: This is the caption 1",
+              "link": "https://google.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400",
+              "description": "Mens: This is the caption 2",
+              "link": "https://microsoft.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Mens: This is the caption 3",
+              "link": "https://yahoo.com"
+            }
+          ]
+        }
+      ],
+      "womens": [
+        {
+          "images": [
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Womens: This is the caption 1",
+              "link": "https://google.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400",
+              "description": "Womens: This is the caption 2",
+              "link": "https://microsoft.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Womens: This is the caption 3",
+              "link": "https://yahoo.com"
+            }
+          ]
+        }
+      ],
+      "kids": [
+        {
+          "images": [
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Kids: This is the caption 1",
+              "link": "https://google.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400",
+              "description": "Kids: This is the caption 2",
+              "link": "https://microsoft.com"
+            },
+            {
+              "image": "https://picsum.photos/400/400?random",
+              "description": "Kids: This is the caption 3",
+              "link": "https://yahoo.com"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
